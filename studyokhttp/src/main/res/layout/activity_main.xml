@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="study.sky.studyokhttp.MainActivity">
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="OKHTTP的get和post请求"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_get_okhttputils"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用okhttp-utils的get和post请求数据"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_downloadfile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用okhttp-utils的下载大文件"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_downloadimage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用okhttp-utils的请求图片"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_image_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用okhttp-utils的请求列表图片"
+        android:textAllCaps="false" />
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="显示请求数据" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>

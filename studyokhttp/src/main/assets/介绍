@@ -1,0 +1,13 @@
+简介:
+OKHttp是一款高效的HTTP客户端,支持连接同一个地址的链接共享同一个socket,
+通过连接池来减小响应延迟,还有透明的GZIP压缩,请求缓存等优势,其核心主要
+有路由、连接协议,拦截器,代理、安全性认证、连接池以及网络适配,拦截器主要
+是指添加,移除,或者转换请求或者回应的头部信息
+这个库也是square开源的一个网络请求库(OKhttp内部依赖okip).
+
+下载地址:http://square.github.io/okhttp/
+功能:大文件下载、大文件上传
+
+使用比较麻烦
+
+第三方封装好的OKHttp库--OKHttp-utils:(宏洋大神已经停止维护)https://github.com/hongyangAndroid/okhttputils

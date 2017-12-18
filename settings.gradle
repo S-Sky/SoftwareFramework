@@ -1,1 +1,1 @@
-include ':app', ':app2', ':studyokhttp'
+include ':app', ':app2', ':studyokhttp', ':studyjson'

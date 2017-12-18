@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="study.sky.studyjson.MainActivity">
+
+    <Button
+        android:id="@+id/btn_json_to_object"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="将json格式的字符串{}转换成Java对象"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_json_to_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="将json格式的字符串{}转换成Java对象的list"
+        android:textAllCaps="false" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="原始数据" />
+
+    <TextView
+        android:id="@+id/text_orignal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="解析数据" />
+
+    <TextView
+        android:id="@+id/text_last"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>

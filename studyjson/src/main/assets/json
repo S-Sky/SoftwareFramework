@@ -1,0 +1,8 @@
+JSON: JavaScript Object Notation，是一种轻量级的数据交换格式
+特点: 具有特定格式的字符串
+      JSON完全独立于编程语言
+      JSON比XML数据传输的有效性要高出很多
+数据格式:
+    Json对象 {}
+    Json数组 []
+

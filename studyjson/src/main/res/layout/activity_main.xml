@@ -20,6 +20,20 @@
         android:text="将json格式的字符串{}转换成Java对象的list"
         android:textAllCaps="false" />
 
+    <Button
+        android:id="@+id/btn_object_to_json"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="将Java对象转换为json字符串{}"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_list_to_json"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="将Java对象的List转换为json字符串{}"
+        android:textAllCaps="false" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

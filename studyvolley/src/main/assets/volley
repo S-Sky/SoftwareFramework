@@ -1,0 +1,15 @@
+Volley: 2013年Google I/O上发布的一款网络框架,基于android平台
+ 优点:
+        1、网络请求的排序(scheduling)
+        2、网络请求的优先级处理
+        3、缓存
+        4、多级别取消请求
+        5、和activity和生命周期的联动(activity结束时同时取消所有网络请求)
+        6、非常适合去进行数据量不大,但通讯频繁的网络操作
+        7、可自定义拓展
+ 缺点:    对于大数据量的网络操作表现不好
+
+ 官网地址:https://android.googlesource.com/platform/frameworks/volley
+
+ 学习的时候找了下,因为第一次接触volley,才知道官方没有现成的jar,所以需要自己打包.
+ 所以这里使用的jar可能版本比较老

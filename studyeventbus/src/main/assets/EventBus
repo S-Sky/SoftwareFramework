@@ -1,0 +1,29 @@
+EventBus是一个Android端优化的publish/subscribe消息总线,简化了应用程序内各组件间、
+    组件与后台线程间的通信,比如网络请求、等网络返回时通过Handler或Broadcast通知UI,
+    两个Fragment之间需要通过Listener通信,这些需求都可以通过EventBus实现
+
+ 使用:
+    注册:EventBus.getDefault().register(this);
+    解注册:EventBus.getDefault().unregister(this);
+    构造发送消息类:(这个类是根据需求自己写的)
+        public class MessageEvent{
+            public String key;
+            public String value:
+
+            public MessageEvent(String key,String value){
+                this.key = key;
+                this.value = value;
+            }
+        }
+    发送消息:EventBus.getDefault().post(new MessageEvent("key","value"));
+    接受消息:ThreadMode.MAIN  表示这个方法在主线程中执行
+             ThreadMode.BACKGROUND  表示这个方法在后台执行,不能并发处理
+             ThreadMode.ASYNC  表示这个方法在后台执行,可以异步并并发处理
+             ThreadMode.POSTING  表示这个方法和消息发送方在同一个线程中执行
+
+ 粘性事件:如果使用postSticky发送事件,那么可以不需要先注册,也能接受到事件(延迟注册)
+    构造方法类
+    发布消息EventBus.getDefault().postSticky(new StickyEvent("粘性事件"));
+    接受消息
+    注册
+    解注册

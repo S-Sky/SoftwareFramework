@@ -1,1 +1,1 @@
-include ':app', ':app2', ':studyokhttp', ':studyjson', ':studyxutils3', ':studyvolley', ':studyeventbus'
+include ':app', ':app2', ':studyokhttp', ':studyjson', ':studyxutils3', ':studyvolley', ':studyeventbus', ':studypicasso'

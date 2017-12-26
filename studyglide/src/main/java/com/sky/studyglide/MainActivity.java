@@ -1,17 +1,12 @@
 package com.sky.studyglide;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.bumptech.glide.DrawableRequestBuilder;
 import com.bumptech.glide.Glide;
-
-import java.io.File;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -53,11 +48,11 @@ public class MainActivity extends AppCompatActivity {
                         .into(imageView);*/
 
                 //加载资源Gif
-                /*Glide.with(this)
+                Glide.with(this)
                         .load(R.drawable.image_gif)
                         .asGif()
                         .placeholder(R.mipmap.ic_launcher) //占位符(gif还没显示出来的时候显示)
-                        .into(imageView);*/
+                        .into(imageView);
 
                 //加载本地gif与加载本地图片类型,只是以加载gif的方式加载
 
@@ -79,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
                         .into(imageView);*/
 
                 //先建立一个缩略图对象,然后先加载缩略图,在加载原图
-                String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/DCIM/Camera/IMG_20161002_115016.jpg";
+               /* String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/DCIM/Camera/IMG_20161002_115016.jpg";
                 String videoPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/DCIM/Camera/VID_20171001_211247.mp4";
                 DrawableRequestBuilder thumbnailRequest = Glide.with(this).load(new File(path));
                 Glide.with(this)
@@ -87,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                         .thumbnail(thumbnailRequest)
                         .centerCrop()
                         .placeholder(R.mipmap.ic_launcher_round)
-                        .into(imageView);
+                        .into(imageView);*/
 
                 break;
             case R.id.btn_glide_list:

@@ -1,0 +1,22 @@
+特点:1、使用简单
+     2、可配置度高,自适应程度高
+     3、支持常见图片格式：Jpg png gif webp
+     4、支持多种数据源  网络 本地  资源  assets 等
+     5、高效缓存策略  支持Memory和Disk图片缓存  默认Bitmap格式采用RGB_565内存使用至少减少一半
+     6、生命周期继承   根据Activity/Fragment生命周期自动管理请求
+     7、高效处理Bitmap,使用Bitmap Pool使Bitmap复用,主动调用recycle回收需要回收的Bitmap,减小系统回收压力
+
+如果使用变换:https://github.com/wasabeef/glide-transformations
+
+注:Glide4.4.0引入的是27.0.2版本,所以项目中的appcompat-v7版本也要改为27.0.2,不然会报错:java.lang.NoSuchMethodError
+    按照官网:repositories {
+                mavenCentral()
+                google()
+             }
+
+             dependencies {
+                implementation 'com.github.bumptech.glide:glide:4.4.0'
+                annotationProcessor 'com.github.bumptech.glide:compiler:4.4.0'
+             }
+    很多方法找不到,找了半天没找到原因,就重新添加3.7版本的依赖了
+

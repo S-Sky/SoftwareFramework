@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 Glide.with(this).load(uri).into(imageView);*/
 
                 //加载网络gif
-               /* String uri = "http://a.hiphotos.baidu.com/image/pic/item/0824ab18972bd407b564b0fd70899e510fb3090a.jpg";
+                /*String uri = "http://a.hiphotos.baidu.com/image/pic/item/0824ab18972bd407b564b0fd70899e510fb3090a.jpg";
                 Glide.with(this)
                         .load(uri)
                         .placeholder(R.drawable.ic_launcher_background)

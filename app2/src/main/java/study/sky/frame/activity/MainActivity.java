@@ -16,6 +16,9 @@ import study.sky.frame.fragment.Fragment_2;
 import study.sky.frame.fragment.Fragment_3;
 import study.sky.frame.fragment.Fragment_4;
 
+/**
+ * 框架二
+ */
 public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.img_home)

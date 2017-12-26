@@ -19,6 +19,10 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * 框架一
+ */
+
 public class MainActivity extends FragmentActivity {
 
     @BindView(R.id.rg_main)

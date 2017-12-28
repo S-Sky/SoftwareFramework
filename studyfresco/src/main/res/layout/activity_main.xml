@@ -19,19 +19,22 @@
         android:text="图片的不同裁剪" />
 
     <Button
+        android:id="@+id/btn_circle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="带进度条的图片" />
+        android:text="圆形和圆角图片" />
+
+    <Button
+        android:id="@+id/btn_gif"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gif动画"
+        android:textAllCaps="false"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="带进度条的图片" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="带进度条的图片" />
+        android:text="多图" />
 
     <Button
         android:layout_width="match_parent"

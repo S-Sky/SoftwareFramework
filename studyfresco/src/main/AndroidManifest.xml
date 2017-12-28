@@ -20,6 +20,8 @@
         </activity>
         <activity android:name=".FrescoProgressActivity" />
         <activity android:name=".FrescoCutActivity" />
+        <activity android:name=".FrescoCircleActivity" />
+        <activity android:name=".FrescoGifActivity" />
     </application>
 
 </manifest>

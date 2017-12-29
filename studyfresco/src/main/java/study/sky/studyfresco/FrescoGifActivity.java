@@ -45,7 +45,7 @@ public class FrescoGifActivity extends Activity {
                 DraweeController controller = Fresco.newDraweeControllerBuilder()
                         .setUri(uri)
                         .setAutoPlayAnimations(false) //是否自动播放动画,false表示不会自动播放动画
-                        .setOldController(simpleDraweeView.getController()) //缓存
+                        .setOldController(simpleDraweeView.getController()) //缓存,减少内存,复用
                         .build();
                 simpleDraweeView.setController(controller);
                 break;

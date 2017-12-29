@@ -17,7 +17,8 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.btn_fresco_progress, R.id.btn_fresco_cut, R.id.btn_circle, R.id.btn_gif})
+    @OnClick({R.id.btn_fresco_progress, R.id.btn_fresco_cut, R.id.btn_circle, R.id.btn_gif,
+            R.id.btn_image_listener})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_fresco_progress:
@@ -31,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_gif:
                 startActivity(new Intent(this, FrescoGifActivity.class));
+                break;
+            case R.id.btn_image_listener:
+                startActivity(new Intent(this, FrescoImageListenerActivity.class));
                 break;
         }
     }

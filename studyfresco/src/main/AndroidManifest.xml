@@ -22,6 +22,7 @@
         <activity android:name=".FrescoCutActivity" />
         <activity android:name=".FrescoCircleActivity" />
         <activity android:name=".FrescoGifActivity" />
+        <activity android:name=".FrescoImageListenerActivity" />
     </application>
 
 </manifest>

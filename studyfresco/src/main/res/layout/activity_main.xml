@@ -29,12 +29,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Gif动画"
-        android:textAllCaps="false"/>
+        android:textAllCaps="false" />
 
     <Button
+        android:id="@+id/btn_image_listener"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="多图" />
+        android:text="图片加载监听" />
 
     <Button
         android:layout_width="match_parent"

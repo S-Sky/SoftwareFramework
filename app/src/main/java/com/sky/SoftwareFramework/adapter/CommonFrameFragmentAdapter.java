@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import java.util.List;
+
 /**
  * Created by Administrator on 2017/12/14 0014.
  */
@@ -14,16 +16,16 @@ import android.widget.TextView;
 public class CommonFrameFragmentAdapter extends BaseAdapter {
 
     private Context mContext;
-    private String[] datas;
+    private List<String> datas;
 
-    public CommonFrameFragmentAdapter(Context context, String[] datas) {
+    public CommonFrameFragmentAdapter(Context context, List<String> datas) {
         this.mContext = context;
         this.datas = datas;
     }
 
     @Override
     public int getCount() {
-        return datas.length;
+        return datas.size();
     }
 
     @Override
@@ -42,7 +44,7 @@ public class CommonFrameFragmentAdapter extends BaseAdapter {
         textView.setTextColor(Color.BLACK);
         textView.setPadding(10, 10, 0, 10);
         textView.setTextSize(20);
-        textView.setText(datas[position]);
+        textView.setText(datas.get(position));
         return textView;
     }
 }

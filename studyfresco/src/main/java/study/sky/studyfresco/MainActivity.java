@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @OnClick({R.id.btn_fresco_progress, R.id.btn_fresco_cut, R.id.btn_circle, R.id.btn_gif,
-            R.id.btn_image_listener, R.id.btn_fresco_resize})
+            R.id.btn_image_listener, R.id.btn_fresco_resize, R.id.btn_fresco_modifyImg, R.id.btn_fresco_autoSizeImg})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_fresco_progress:
@@ -38,6 +38,12 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.btn_fresco_resize:
                 startActivity(new Intent(this, FrescoResizeActivity.class));
+                break;
+            case R.id.btn_fresco_modifyImg:
+                startActivity(new Intent(this, FrescoModifyActivity.class));
+                break;
+            case R.id.btn_fresco_autoSizeImg:
+                startActivity(new Intent(this, FrescoAutoSizeImgActivity.class));
                 break;
         }
     }

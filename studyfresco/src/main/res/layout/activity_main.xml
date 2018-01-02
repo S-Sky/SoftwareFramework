@@ -44,23 +44,15 @@
         android:text="图片的缩放和旋转" />
 
     <Button
+        android:id="@+id/btn_fresco_modifyImg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="带进度条的图片" />
+        android:text="修改图片" />
 
     <Button
+        android:id="@+id/btn_fresco_autoSizeImg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="带进度条的图片" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="带进度条的图片" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="带进度条的图片" />
+        android:text="动态展示图片" />
 
 </LinearLayout>

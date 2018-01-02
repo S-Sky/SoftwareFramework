@@ -24,6 +24,8 @@
         <activity android:name=".FrescoGifActivity" />
         <activity android:name=".FrescoImageListenerActivity" />
         <activity android:name=".FrescoResizeActivity" />
+        <activity android:name=".FrescoModifyActivity" />
+        <activity android:name=".FrescoAutoSizeImgActivity"/>
     </application>
 
 </manifest>

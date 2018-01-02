@@ -38,9 +38,10 @@
         android:text="图片加载监听" />
 
     <Button
+        android:id="@+id/btn_fresco_resize"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="带进度条的图片" />
+        android:text="图片的缩放和旋转" />
 
     <Button
         android:layout_width="match_parent"

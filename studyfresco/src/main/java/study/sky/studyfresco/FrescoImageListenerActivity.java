@@ -9,9 +9,11 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.controller.BaseControllerListener;
 import com.facebook.drawee.controller.ControllerListener;
 import com.facebook.drawee.interfaces.DraweeController;
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.facebook.imagepipeline.core.ImagePipelineConfig;
 import com.facebook.imagepipeline.decoder.ProgressiveJpegConfig;
 import com.facebook.imagepipeline.image.ImageInfo;
 import com.facebook.imagepipeline.image.ImmutableQualityInfo;
@@ -35,35 +37,37 @@ public class FrescoImageListenerActivity extends Activity {
     TextView tvSuccessful;
     @BindView(R.id.tv_show_failed)
     TextView tvFailed;
-    private ControllerListener<? super ImageInfo> controllerListener = new ControllerListener<ImageInfo>() {
-        @Override
-        public void onSubmit(String id, Object callerContext) {
-
-        }
-
+    private ControllerListener controllerListener = new BaseControllerListener<ImageInfo>() {
+        //加载图片完毕
         @Override
         public void onFinalImageSet(String id, @Nullable ImageInfo imageInfo, @Nullable Animatable animatable) {
+            super.onFinalImageSet(id, imageInfo, animatable);
 
+            if (imageInfo == null) {
+                return;
+            }
+
+            QualityInfo qualityInfo = imageInfo.getQualityInfo();
+            tvSuccessful.setText("Final image received" +
+                    "\nSize:" + imageInfo.getWidth()
+                    + "x" + imageInfo.getHeight()
+                    + "\nQuality level: " + qualityInfo.getQuality()
+                    + "\ngood enough: " + qualityInfo.isOfGoodEnoughQuality()
+                    + "\nfull quality: " + qualityInfo.isOfFullQuality());
         }
 
+        //渐进式加载图片回调
         @Override
         public void onIntermediateImageSet(String id, @Nullable ImageInfo imageInfo) {
-
+            super.onIntermediateImageSet(id, imageInfo);
+            tvFailed.setText("IntermediateImageSet image received");
         }
 
-        @Override
-        public void onIntermediateImageFailed(String id, Throwable throwable) {
-
-        }
-
+        //加载图片失败
         @Override
         public void onFailure(String id, Throwable throwable) {
-
-        }
-
-        @Override
-        public void onRelease(String id) {
-
+            super.onFailure(id, throwable);
+            tvSuccessful.setText("Error loading" + id);
         }
     };
 
@@ -90,6 +94,7 @@ public class FrescoImageListenerActivity extends Activity {
                 return ImmutableQualityInfo.of(scanNumber, isGoodEnough, false);
             }
         };
+        ImagePipelineConfig.newBuilder(this).setProgressiveJpegConfig(jpegConfig).build();
 
         Uri uri = Uri.parse("http://pic1.sc.chinaz.com/files/pic/pic9/201712/bpic4641.jpg");
         //图片请求

@@ -26,10 +26,11 @@
             android:name=".activity.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".universalvideoview.UniversalVideoViewActivity"
-            android:screenOrientation="portrait"
+        <activity
+            android:name=".universalvideoview.UniversalVideoViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/app_name" />
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

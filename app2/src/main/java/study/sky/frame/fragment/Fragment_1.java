@@ -46,6 +46,7 @@ public class Fragment_1 extends BaseFragment {
     @Override
     protected void initData() {
         datas.add("UniversalVideoView");
+        datas.add("JiaoZiVideoPlayer");
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, datas);
         listView.setAdapter(adapter);
 
@@ -53,7 +54,7 @@ public class Fragment_1 extends BaseFragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (datas.get(position).equals("UniversalVideoView"))
-                startActivity(new Intent(context, UniversalVideoViewActivity.class));
+                    startActivity(new Intent(context, UniversalVideoViewActivity.class));
             }
         });
     }

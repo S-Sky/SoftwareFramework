@@ -25,7 +25,7 @@ public class UniversalVideoViewActivity extends Activity implements UniversalVid
 
     private static final String TAG = "UniversalVideoViewActivity";
     private static final String SEEK_POSITION_KEY = "SEEK_POSITION_KEY";
-    private static final String VIDEO_URL = "http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4";
+    private static final String VIDEO_URL = "http://pgccdn.v.baidu.com/1890622578_2514378657_20170523122443.mp4?authorization=bce-auth-v1%2Fc308a72e7b874edd9115e4614e1d62f6%2F2017-05-23T04%3A26%3A14Z%2F-1%2F%2F67f21c74e69c4d38e7f5a8d36dd9a62ef55b5e866227163216b53785d52860ba&responseCacheControl=max-age%3D8640000&responseExpires=Thu%2C+31+Aug+2017+12%3A26%3A14+GMT&xcode=9c16a6fd51f477f84bdcc17b45660fc8f7948e6b526ccb63&time=1515121899&_=1515038775084";
 
     @BindView(R.id.video_layout)
     FrameLayout mVideoLayout;
@@ -62,10 +62,10 @@ public class UniversalVideoViewActivity extends Activity implements UniversalVid
             @Override
             public void onClick(View v) {
                 if (mSeekPosition > 0) {
-                    mVideoView.seekTo(mSeekPosition);
+                    mVideoView.seekTo(mSeekPosition); //设置播放的进度
                 }
                 mVideoView.start();
-                mMediaController.setTitle("Big Buck Bunny");
+                mMediaController.setTitle("MP4视频");
             }
         });
         //播放完成
@@ -83,7 +83,7 @@ public class UniversalVideoViewActivity extends Activity implements UniversalVid
         super.onPause();
         //Log.d(TAG, "onPause ");
         if (mVideoView != null && mVideoView.isPlaying()) {
-            mSeekPosition = mVideoView.getCurrentPosition();
+            mSeekPosition = mVideoView.getCurrentPosition();//获得当前的播放位置
             //Log.d(TAG, "onPause mSeekPosition=" + mSeekPosition);
             mVideoView.pause();
         }
@@ -104,7 +104,7 @@ public class UniversalVideoViewActivity extends Activity implements UniversalVid
                 videoLayoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT;
                 videoLayoutParams.height = cachedHeight;
                 mVideoLayout.setLayoutParams(videoLayoutParams);
-                mVideoView.setVideoPath(VIDEO_URL);
+                mVideoView.setVideoPath(VIDEO_URL); //设置播放地址
                 mVideoView.requestFocus();
             }
         });

@@ -13,7 +13,9 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import study.sky.frame.JiaoZiVideoPlayer.JiaoZiVideoPlayerActivity;
 import study.sky.frame.R;
+import study.sky.frame.banner.BannerActivity;
 import study.sky.frame.base.BaseFragment;
 import study.sky.frame.universalvideoview.UniversalVideoViewActivity;
 
@@ -47,6 +49,7 @@ public class Fragment_1 extends BaseFragment {
     protected void initData() {
         datas.add("UniversalVideoView");
         datas.add("JiaoZiVideoPlayer");
+        datas.add("Banner");
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, datas);
         listView.setAdapter(adapter);
 
@@ -55,6 +58,10 @@ public class Fragment_1 extends BaseFragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (datas.get(position).equals("UniversalVideoView"))
                     startActivity(new Intent(context, UniversalVideoViewActivity.class));
+                if (datas.get(position).equals("JiaoZiVideoPlayer"))
+                    startActivity(new Intent(context, JiaoZiVideoPlayerActivity.class));
+                if (datas.get(position).equals("Banner"))
+                    startActivity(new Intent(context, BannerActivity.class));
             }
         });
     }

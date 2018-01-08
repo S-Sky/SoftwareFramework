@@ -24,6 +24,8 @@ public class App extends Application {
         app = this;
         getScreen(this);
         Fresco.initialize(this);
+
+        //让软件状态还原的框架
         Recovery.getInstance()
                 .debug(true)
                 .recoverInBackground(false)

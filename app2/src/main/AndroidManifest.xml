@@ -37,7 +37,8 @@
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
         <activity android:name=".banner.BannerActivity" />
-        <activity android:name=".countdownview.CountdownViewRecyclerActivity"/>
+        <activity android:name=".countdownview.CountdownViewRecyclerActivity" />
+        <activity android:name=".tablayout.TabLayoutActivity" />
     </application>
 
 </manifest>

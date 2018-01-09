@@ -18,6 +18,7 @@ import study.sky.frame.R;
 import study.sky.frame.banner.BannerActivity;
 import study.sky.frame.base.BaseFragment;
 import study.sky.frame.countdownview.CountdownViewRecyclerActivity;
+import study.sky.frame.tablayout.TabLayoutActivity;
 import study.sky.frame.universalvideoview.UniversalVideoViewActivity;
 
 /**
@@ -52,6 +53,7 @@ public class Fragment_1 extends BaseFragment {
         datas.add("JiaoZiVideoPlayer");
         datas.add("Banner");
         datas.add("CountdownView");
+        datas.add("TabLayout");
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, datas);
         listView.setAdapter(adapter);
 
@@ -66,6 +68,8 @@ public class Fragment_1 extends BaseFragment {
                     startActivity(new Intent(context, BannerActivity.class));
                 if (datas.get(position).equals("CountdownView"))
                     startActivity(new Intent(context, CountdownViewRecyclerActivity.class));
+                if (datas.get(position).equals("TabLayout"))
+                    startActivity(new Intent(context, TabLayoutActivity.class));
             }
         });
     }

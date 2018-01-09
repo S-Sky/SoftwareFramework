@@ -94,8 +94,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.btn: //使用原生的OKHttp请求网络数据,get和post
                 textView.setText("");
-                getDataFromPost();//post请求
-                //getDataFromGet(); //get请求
+                //getDataFromPost();//post请求
+                getDataFromGet(); //get请求
                 break;
             case R.id.btn_get_okhttputils: //使用okhttp-utils请求数据
                 getDataGetByOKHttpUtils();

@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="study.sky.frame">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
@@ -39,6 +40,10 @@
         <activity android:name=".banner.BannerActivity" />
         <activity android:name=".countdownview.CountdownViewRecyclerActivity" />
         <activity android:name=".tablayout.TabLayoutActivity" />
+        <activity android:name=".androidandh5.AndroidAndH5Activity" />
+        <activity android:name=".androidandh5.JavaAndJsCallActivity" />
+        <activity android:name=".androidandh5.JsCallJavaVideoActivity" />
+        <activity android:name=".androidandh5.JsCallJavaPhoneActivity"/>
     </application>
 
 </manifest>

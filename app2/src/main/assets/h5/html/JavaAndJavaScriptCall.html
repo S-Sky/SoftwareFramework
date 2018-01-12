@@ -1,0 +1,37 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <script type="text/javascript">
+
+	function javaCallJs(){
+		 document.getElementById("content").innerHTML +=   
+	         "<br\>java调用了js无参函数";
+	}
+	
+	function javaCallJs(arg){
+		 document.getElementById("content").innerHTML =
+	         ("欢迎："+arg );
+	}
+	
+	
+   function showDialog(){
+      console.log("这是来自js的代码");
+   }
+
+    </script>
+
+</head>
+
+<body>
+
+<div align="left" id="content"> 谷粉</div>
+<div align="center">Java代码和H5代码互调</div>
+
+<p><img src="http://a0.att.hudong.com/86/12/300001062059132875120246264_950.jpg"></p>
+
+<input type="button" value="H5调用Android的方法" onclick="window.Android.showToast()"/>
+
+</body>
+
+
+</html>

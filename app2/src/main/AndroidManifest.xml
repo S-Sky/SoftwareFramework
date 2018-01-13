@@ -43,7 +43,8 @@
         <activity android:name=".androidandh5.AndroidAndH5Activity" />
         <activity android:name=".androidandh5.JavaAndJsCallActivity" />
         <activity android:name=".androidandh5.JsCallJavaVideoActivity" />
-        <activity android:name=".androidandh5.JsCallJavaPhoneActivity"/>
+        <activity android:name=".androidandh5.JsCallJavaPhoneActivity" />
+        <activity android:name=".retrofit.RetrofitActivity"></activity>
     </application>
 
 </manifest>

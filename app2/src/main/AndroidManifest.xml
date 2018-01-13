@@ -44,7 +44,9 @@
         <activity android:name=".androidandh5.JavaAndJsCallActivity" />
         <activity android:name=".androidandh5.JsCallJavaVideoActivity" />
         <activity android:name=".androidandh5.JsCallJavaPhoneActivity" />
-        <activity android:name=".retrofit.RetrofitActivity"></activity>
+        <activity android:name=".retrofit.RetrofitActivity" />
+        <activity android:name=".rxjava.RxJavaActivity" />
+        <activity android:name=".rxjava.SchedulerActivity"></activity>
     </application>
 
 </manifest>

@@ -21,6 +21,7 @@ import study.sky.frame.banner.BannerActivity;
 import study.sky.frame.base.BaseFragment;
 import study.sky.frame.countdownview.CountdownViewRecyclerActivity;
 import study.sky.frame.retrofit.RetrofitActivity;
+import study.sky.frame.rxjava.RxJavaActivity;
 import study.sky.frame.tablayout.TabLayoutActivity;
 import study.sky.frame.universalvideoview.UniversalVideoViewActivity;
 
@@ -60,6 +61,7 @@ public class Fragment_1 extends BaseFragment {
         datas.add("TabLayout");
         datas.add("AndroidAndH5");
         datas.add("Retrofit");
+        datas.add("RxJava");
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, datas);
         listView.setAdapter(adapter);
 
@@ -80,6 +82,8 @@ public class Fragment_1 extends BaseFragment {
                     startActivity(new Intent(context, AndroidAndH5Activity.class));
                 if (datas.get(position).equals("Retrofit"))
                     startActivity(new Intent(context, RetrofitActivity.class));
+                if (datas.get(position).equals("RxJava"))
+                    startActivity(new Intent(context, RxJavaActivity.class));
             }
         });
     }

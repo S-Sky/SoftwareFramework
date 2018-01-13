@@ -55,7 +55,7 @@ public class RetrofitActivity extends Activity {
 
         switch (view.getId()) {
             case R.id.btn_retrofit:
-                studyRetrofit();
+                //studyRetrofit();
                 studyRetrofitPost();
                 break;
             case R.id.btn_retrofit_rxjava:
@@ -76,6 +76,7 @@ public class RetrofitActivity extends Activity {
 
     /**
      * post
+     * 注:这里用的接口是get的,所以post请求的时候会出错
      */
     private void studyRetrofitPost() {
         api.postData(new DataParams(1, "1418816972")).enqueue(new Callback<DataBean>() {
@@ -83,8 +84,7 @@ public class RetrofitActivity extends Activity {
             public void onResponse(Call<DataBean> call, Response<DataBean> response) {
 
                 if (response.isSuccessful()) {
-                    List<DataBean.ResultBean.DataBeanTest> list = response.body().getResult().getData();
-                    Log.e("list==", list.get(0).getContent());
+                    Log.e("list==", response.toString());
                 }
             }
 

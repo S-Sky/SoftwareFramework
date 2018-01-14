@@ -1,0 +1,3 @@
+CountdownView是Android中第三方的倒计时秒杀控件,在商城购物相关软件秒杀和倒计时中经常用到;
+它可以在ListView和RecyclerView中显示秒杀倒计时,滑动时候并且时间不会错乱,且性能良好
+CountdownView还可以自定义显示各种风格

@@ -24,12 +24,14 @@ public class App extends Application {
         app = this;
         getScreen(this);
         Fresco.initialize(this);
-        Recovery.getInstance()
-                .debug(true)
-                .recoverInBackground(false)
-                .recoverStack(true)
-                .mainPage(MainActivity.class)
-                .init(this);
+
+        //让软件状态还原的框架
+//        Recovery.getInstance()
+//                .debug(true)
+//                .recoverInBackground(false)
+//                .recoverStack(true)
+//                .mainPage(MainActivity.class)
+//                .init(this);
     }
 
     public void getScreen(Context aty) {

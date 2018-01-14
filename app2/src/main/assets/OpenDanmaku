@@ -1,0 +1,5 @@
+OpenDanmaku是Android中第三方的弹幕控件,在播放视频和直播软件过程中弹出用户的评论,并且以滚动的方式显示
+
+关于视频播放时弹幕存在遮挡视频的bug解决方法:
+源码中DanmakuView中onDraw()方法中 把这一句canvas.drawColor(Color.TRANSPARENT, PorterDuff.Mode.CLEAR);
+    //先绘制正在播放的弹幕 的前面, //canvas.drawColor(Color.TRANSPARENT);这是改变弹幕背景的方法

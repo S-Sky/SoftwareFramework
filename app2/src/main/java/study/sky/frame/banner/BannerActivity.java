@@ -82,8 +82,13 @@ public class BannerActivity extends Activity implements SwipeRefreshLayout.OnRef
         list.setAdapter(new SampleAdapter(this, data));
         list.setOnItemClickListener(this);
 
-        //简单使用
-        banner.setImages(Arrays.asList(getResources().getStringArray(R.array.url)))
+
+        String[] urls = getResources().getStringArray(R.array.url);
+        List list = Arrays.asList(urls);
+        List arrayList = new ArrayList(list);
+        //简单使用 //加载数据
+        banner.setImages(new ArrayList(Arrays.asList(getResources().getStringArray(R.array.url))))
+//        banner.setImages(arrayList)
                 .setImageLoader(new GlideImageLoader())
                 .setOnBannerListener(this)
                 .start();
@@ -92,6 +97,7 @@ public class BannerActivity extends Activity implements SwipeRefreshLayout.OnRef
 
     @Override
     public void onRefresh() {
+        //下拉刷新  两秒之后刷新轮播数据
         mHandler.sendEmptyMessageDelayed(REFRESH_COMPLETE, 2000);
     }
 

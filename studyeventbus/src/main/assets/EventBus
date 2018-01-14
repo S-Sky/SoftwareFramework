@@ -4,6 +4,38 @@ EventBus是一个Android端优化的publish/subscribe消息总线,简化了应�
 
  使用:
     注册:EventBus.getDefault().register(this);
+        //getDefault源码
+        public static EventBus getDefault() {
+           if (defaultInstance == null) {
+              synchronized (EventBus.class) {
+                 if (defaultInstance == null) {
+                    defaultInstance = new EventBus();
+                 }
+              }
+           }
+           return defaultInstance;
+           //EventBus是单例模式存在的,一个项目中只能有一个EventBus
+           //这样有利于管理订阅者和订阅方法,这会在下面的介绍中体现出来
+
+           //EventBus采用双重校验锁设计为一个单例模式,奇怪的在于虽然设计为单例模式
+           //但是构造方法却是public类型,EventBus默认支持一条事件总线
+           //通常是通过getDefault()方法获取EventBus实例
+           //但也能通过直接new EventBus这种最简单的方式获取多条事件总线,彼此之间完全分开
+        }
+        //register(this)
+        public void register(Object subscriber) {
+            Class<?> subscriberClass = subscriber.getClass();
+            //从订阅类(指的是当前注册的类)中获取所有的订阅放发信息
+            List<SubscriberMethod> subscriberMethods = subscriberMethodFinder.findSubscriberMethods(subscriberClass);
+            synchronized (this) {
+                for (SubscriberMethod subscriberMethod : subscriberMethods) {
+                    //注册订阅方法
+                    subscribe(subscriber, subscriberMethod);
+                }
+            }
+        }
+
+
     解注册:EventBus.getDefault().unregister(this);
     构造发送消息类:(这个类是根据需求自己写的)
         public class MessageEvent{

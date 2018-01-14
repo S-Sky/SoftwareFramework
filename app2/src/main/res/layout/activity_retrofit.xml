@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="study.sky.frame.retrofit.RetrofitActivity">
+
+    <include layout="@layout/total_bar" />
+
+    <Button
+        android:id="@+id/btn_retrofit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Retrofit"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_retrofit_rxjava"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RetrofitAndRxJava"
+        android:textAllCaps="false" />
+
+</LinearLayout>

@@ -13,10 +13,16 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import study.sky.frame.JiaoZiVideoPlayer.JiaoZiVideoPlayerActivity;
 import study.sky.frame.R;
+import study.sky.frame.androidandh5.AndroidAndH5Activity;
 import study.sky.frame.banner.BannerActivity;
 import study.sky.frame.base.BaseFragment;
+import study.sky.frame.countdownview.CountdownViewRecyclerActivity;
+import study.sky.frame.retrofit.RetrofitActivity;
+import study.sky.frame.rxjava.RxJavaActivity;
+import study.sky.frame.tablayout.TabLayoutActivity;
 import study.sky.frame.universalvideoview.UniversalVideoViewActivity;
 
 /**
@@ -31,6 +37,7 @@ public class Fragment_1 extends BaseFragment {
     ListView listView;
 
     List<String> datas;
+    private Unbinder unbinder;
 
     @Override
     protected int getResource() {
@@ -40,7 +47,7 @@ public class Fragment_1 extends BaseFragment {
 
     @Override
     protected void init(View view) {
-        ButterKnife.bind(this, view);
+        unbinder = ButterKnife.bind(this, view);
         datas = new ArrayList<>();
         textView.setVisibility(View.GONE);
     }
@@ -50,6 +57,11 @@ public class Fragment_1 extends BaseFragment {
         datas.add("UniversalVideoView");
         datas.add("JiaoZiVideoPlayer");
         datas.add("Banner");
+        datas.add("CountdownView");
+        datas.add("TabLayout");
+        datas.add("AndroidAndH5");
+        datas.add("Retrofit");
+        datas.add("RxJava");
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(context, android.R.layout.simple_list_item_1, datas);
         listView.setAdapter(adapter);
 
@@ -62,6 +74,16 @@ public class Fragment_1 extends BaseFragment {
                     startActivity(new Intent(context, JiaoZiVideoPlayerActivity.class));
                 if (datas.get(position).equals("Banner"))
                     startActivity(new Intent(context, BannerActivity.class));
+                if (datas.get(position).equals("CountdownView"))
+                    startActivity(new Intent(context, CountdownViewRecyclerActivity.class));
+                if (datas.get(position).equals("TabLayout"))
+                    startActivity(new Intent(context, TabLayoutActivity.class));
+                if (datas.get(position).equals("AndroidAndH5"))
+                    startActivity(new Intent(context, AndroidAndH5Activity.class));
+                if (datas.get(position).equals("Retrofit"))
+                    startActivity(new Intent(context, RetrofitActivity.class));
+                if (datas.get(position).equals("RxJava"))
+                    startActivity(new Intent(context, RxJavaActivity.class));
             }
         });
     }
@@ -70,5 +92,6 @@ public class Fragment_1 extends BaseFragment {
     protected void startDestroy() {
         Log.i("Fragment_1-->", "startDestroy");
         datas = null;
+        unbinder.unbind();
     }
 }

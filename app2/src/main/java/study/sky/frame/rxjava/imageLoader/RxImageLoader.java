@@ -62,7 +62,7 @@ public class RxImageLoader {
     public void into(final ImageView imageView) {
 
         Observable.concat(requestCreator.getImageFromMemory(mUrl), requestCreator.getImageFromDisk(mUrl), requestCreator.getImageFromNetwork(mUrl))
-                // .first(new ImageBean(null, mUrl)).toObservable()
+                 .first(new ImageBean(null, mUrl)).toObservable()
                 .subscribe(new Observer<ImageBean>() {
                     @Override
                     public void onSubscribe(Disposable d) {

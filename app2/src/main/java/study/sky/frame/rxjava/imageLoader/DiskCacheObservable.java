@@ -2,7 +2,10 @@ package study.sky.frame.rxjava.imageLoader;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.util.Log;
+
+import com.jakewharton.disklrucache.DiskLruCache;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -19,7 +22,6 @@ import io.reactivex.ObservableSource;
 import io.reactivex.Observer;
 import io.reactivex.schedulers.Schedulers;
 
-
 /**
  * Created by Administrator on 2018/1/16 0016.
  * 文件缓存
@@ -30,9 +32,8 @@ import io.reactivex.schedulers.Schedulers;
 public class DiskCacheObservable extends CacheObservable {
 
     private Context mContext;
-    /*
-        private DiskLruCache mDiskLruCache;
-    */
+    private DiskLruCache mDiskLruCache;
+
     private final int maxSize = 10 * 1024 * 1024; //这里是10M
 
     public DiskCacheObservable(Context mContext) {
@@ -66,12 +67,12 @@ public class DiskCacheObservable extends CacheObservable {
             cacheDir.mkdirs();
         }
         int versionCode = DiskCacheUtils.getAppVersion(mContext);
-    /*    try {
+        try {
             //这里需要注意参数二：缓存版本号，只要不同版本号，缓存都会被清除，重新使用新的
             mDiskLruCache = DiskLruCache.open(cacheDir, versionCode, 1, maxSize);
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
+        }
     }
 
     /**
@@ -84,7 +85,7 @@ public class DiskCacheObservable extends CacheObservable {
         Bitmap bitmap = null;
         FileDescriptor fileDescriptor = null;
         FileInputStream fileInputStream = null;
-     /*   try {
+       try {
             final String key = DiskCacheUtils.getMD5String(url);
             DiskLruCache.Snapshot snapshot = mDiskLruCache.get(key);
             if (snapshot != null) {
@@ -104,7 +105,7 @@ public class DiskCacheObservable extends CacheObservable {
                     e.printStackTrace();
                 }
             }
-        }*/
+        }
         return bitmap;
     }
 
@@ -114,7 +115,7 @@ public class DiskCacheObservable extends CacheObservable {
      * @param imageBean
      */
     private void putDataToDiskLruCache(ImageBean imageBean) {
-       /* try {
+        try {
             String key = DiskCacheUtils.getMD5String(imageBean.getUrl());
             DiskLruCache.Editor editor = mDiskLruCache.edit(key);
             if (editor != null) {
@@ -129,7 +130,7 @@ public class DiskCacheObservable extends CacheObservable {
             }
         } catch (IOException e) {
             e.printStackTrace();
-        }*/
+        }
     }
 
     /**

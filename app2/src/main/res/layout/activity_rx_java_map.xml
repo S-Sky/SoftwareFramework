@@ -27,6 +27,20 @@
         android:layout_height="wrap_content"
         android:text="防止按钮重复(连续)点击" />
 
+    <Button
+        android:id="@+id/btn_verification_code_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="短信验证倒计时" />
+
+    <Button
+        android:id="@+id/btn_cache_rxjava"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RxJava三级缓存"
+        android:textAllCaps="false"/>
+
+
     <TextView
         android:id="@+id/tv_show"
         android:layout_width="wrap_content"

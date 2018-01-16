@@ -53,7 +53,7 @@ public class RxJavaMapActivity extends Activity {
      * @param view
      */
 
-    @OnClick({R.id.btn_map, R.id.btn_search_keyword, R.id.btn_repeat_click})
+    @OnClick({R.id.btn_map, R.id.btn_search_keyword, R.id.btn_repeat_click, R.id.btn_verification_code_time, R.id.btn_cache_rxjava})
     public void onClick(View view) {
 
         switch (view.getId()) {
@@ -76,6 +76,20 @@ public class RxJavaMapActivity extends Activity {
              */
             case R.id.btn_repeat_click:
                 startActivity(new Intent(this, PreventRepeatClickActivity.class));
+                break;
+            /**
+             * 网络数据与本地缓存数据合并的时候使用merge操作符
+             * 使用Merge操作符可以将多个Observables的输出合并,就好像它们是一个单个的Observable
+             * concat 把所有的数据源联合在一起
+             */
+            case R.id.btn_verification_code_time:
+                startActivity(new Intent(this, VerificationCodeTimeActivity.class));
+                break;
+            /**
+             * 图片缓存
+             */
+            case R.id.btn_cache_rxjava:
+                startActivity(new Intent(this, ImageCacheActivity.class));
                 break;
         }
 

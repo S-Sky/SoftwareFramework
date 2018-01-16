@@ -47,7 +47,7 @@ public class PreventRepeatClickActivity extends Activity {
 
                     @Override
                     public void onNext(Object o) {
-                        Log.e("PreventRepeatClick", "这里是点击事件");
+                        Log.e("PreventRepeatClick", "这里是点击事件" + System.currentTimeMillis());
                     }
 
                     @Override

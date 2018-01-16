@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="study.sky.frame.rxjava.RxJavaMapActivity">
+
+    <include layout="@layout/total_bar" />
+
+    <Button
+        android:id="@+id/btn_map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="操作符FlatMap"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_search_keyword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="关键词搜索" />
+
+    <Button
+        android:id="@+id/btn_repeat_click"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="防止按钮重复(连续)点击" />
+
+    <Button
+        android:id="@+id/btn_verification_code_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="短信验证倒计时" />
+
+    <Button
+        android:id="@+id/btn_cache_rxjava"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RxJava三级缓存"
+        android:textAllCaps="false"/>
+
+
+    <TextView
+        android:id="@+id/tv_show"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

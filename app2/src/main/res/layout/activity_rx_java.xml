@@ -6,6 +6,8 @@
     android:orientation="vertical"
     tools:context="study.sky.frame.rxjava.RxJavaActivity">
 
+    <include layout="@layout/total_bar" />
+
     <Button
         android:id="@+id/btn_click"
         android:layout_width="match_parent"
@@ -18,6 +20,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Scheduler线程控制"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btn_rx_map"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="操作符的学习"
         android:textAllCaps="false" />
 
     <TextView

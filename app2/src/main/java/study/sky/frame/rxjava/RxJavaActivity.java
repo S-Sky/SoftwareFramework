@@ -1,8 +1,8 @@
 package study.sky.frame.rxjava;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -17,20 +17,23 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
 import study.sky.frame.R;
 
-public class RxJavaActivity extends AppCompatActivity {
+public class RxJavaActivity extends Activity {
 
     private Unbinder unbinder;
     @BindView(R.id.tv_show)
     TextView tvShow;
+    @BindView(R.id.tv_title)
+    TextView tvTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rx_java);
         unbinder = ButterKnife.bind(this);
+        tvTitle.setText("RxJava");
     }
 
-    @OnClick({R.id.btn_click, R.id.btn_scheduler})
+    @OnClick({R.id.btn_click, R.id.btn_scheduler, R.id.btn_rx_map})
     public void onClick(View view) {
 
         switch (view.getId()) {
@@ -50,6 +53,9 @@ public class RxJavaActivity extends AppCompatActivity {
                 break;
             case R.id.btn_scheduler:
                 startActivity(new Intent(this, SchedulerActivity.class));
+                break;
+            case R.id.btn_rx_map:
+                startActivity(new Intent(this, RxJavaMapActivity.class));
                 break;
         }
 

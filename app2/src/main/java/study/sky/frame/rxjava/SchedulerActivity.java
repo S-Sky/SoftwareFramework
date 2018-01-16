@@ -1,7 +1,7 @@
 package study.sky.frame.rxjava;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -25,7 +25,7 @@ import study.sky.frame.R;
 import study.sky.frame.rxjava.bean.DataBean;
 import study.sky.frame.rxjava.retrofitapi.RetrofitApi;
 
-public class SchedulerActivity extends AppCompatActivity {
+public class SchedulerActivity extends Activity {
 
     private Unbinder unbinder;
     @BindView(R.id.image)
@@ -33,12 +33,16 @@ public class SchedulerActivity extends AppCompatActivity {
     @BindView(R.id.tv_show)
     TextView textView;
     private RetrofitApi api;
+    @BindView(R.id.tv_title)
+    TextView tvTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scheduler);
         unbinder = ButterKnife.bind(this);
+
+        tvTitle.setText("RxJava");
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://gank.io/")

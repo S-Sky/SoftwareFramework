@@ -4,24 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="study.sky.frame.rxjava.SchedulerActivity">
+    tools:context="study.sky.frame.rxjava.CustomImageCacheActivity">
 
     <include layout="@layout/total_bar" />
 
     <Button
-        android:id="@+id/btn_get"
+        android:id="@+id/btn_show"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="获取数据" />
-
-    <TextView
-        android:id="@+id/tv_show"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:text="显示图片" />
 
     <ImageView
-        android:id="@+id/image"
+        android:id="@+id/image_cache"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
-
 </LinearLayout>

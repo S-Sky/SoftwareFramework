@@ -4,24 +4,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="study.sky.frame.rxjava.SchedulerActivity">
+    tools:context="study.sky.frame.rxjava.VerificationCodeTimeActivity">
 
     <include layout="@layout/total_bar" />
 
-    <Button
-        android:id="@+id/btn_get"
+    <EditText
+        android:id="@+id/edit_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="获取数据" />
+        android:inputType="phone"/>
 
-    <TextView
-        android:id="@+id/tv_show"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn_verification_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="获取验证码"
+        android:textAllCaps="false" />
 
 </LinearLayout>

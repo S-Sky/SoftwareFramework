@@ -46,7 +46,13 @@
         <activity android:name=".androidandh5.JsCallJavaPhoneActivity" />
         <activity android:name=".retrofit.RetrofitActivity" />
         <activity android:name=".rxjava.RxJavaActivity" />
-        <activity android:name=".rxjava.SchedulerActivity"></activity>
+        <activity android:name=".rxjava.SchedulerActivity" />
+        <activity android:name=".rxjava.RxJavaMapActivity" />
+        <activity android:name=".rxjava.EditSearchActivity" />
+        <activity android:name=".rxjava.PreventRepeatClickActivity" />
+        <activity android:name=".rxjava.VerificationCodeTimeActivity" />
+        <activity android:name=".rxjava.ImageCacheActivity" />
+        <activity android:name=".rxjava.CustomImageCacheActivity"></activity>
     </application>
 
 </manifest>

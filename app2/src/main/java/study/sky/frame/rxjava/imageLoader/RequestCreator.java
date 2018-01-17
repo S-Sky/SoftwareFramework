@@ -25,8 +25,14 @@ public class RequestCreator {
         networkCacheObservable = new NetworkCacheObservable();
     }
 
+    /**
+     * filter:过滤,bitmap不为空时才会被发射
+     *
+     * @param url
+     * @return
+     */
     public Observable<ImageBean> getImageFromMemory(String url) {
-        Log.e("RequestCreator", url);
+        Log.e("RequestCreator", "getImageFromMemory");
         return memoryCacheObservable.getImage(url)
                 .filter(new Predicate<ImageBean>() {
                     @Override
@@ -38,6 +44,7 @@ public class RequestCreator {
     }
 
     public Observable<ImageBean> getImageFromDisk(String url) {
+        Log.e("RequestCreator", "getImageFromDisk");
         return diskCacheObservable.getImage(url)
                 .filter(new Predicate<ImageBean>() {
                     @Override
@@ -56,6 +63,7 @@ public class RequestCreator {
     }
 
     public Observable<ImageBean> getImageFromNetwork(String url) {
+        Log.e("RequestCreator", "getImageFromNetwork");
         return networkCacheObservable.getImage(url)
                 .filter(new Predicate<ImageBean>() {
                     @Override

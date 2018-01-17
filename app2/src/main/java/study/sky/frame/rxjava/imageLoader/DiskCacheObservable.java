@@ -41,7 +41,6 @@ public class DiskCacheObservable extends CacheObservable {
         initDiskLruCache();
     }
 
-
     @Override
     public ImageBean getDataFromCache(String url) {
         Log.e("getDataFromCache", "getDataFromDiskCache");
@@ -60,8 +59,12 @@ public class DiskCacheObservable extends CacheObservable {
         }).subscribeOn(Schedulers.io()).subscribe();
     }
 
+    /**
+     * 初始换DiskLruCache
+     */
 
     public void initDiskLruCache() {
+        //获取缓存的目录
         File cacheDir = DiskCacheUtils.getDiskCacheDir(mContext, "our_cache");
         if (!cacheDir.exists()) {
             cacheDir.mkdirs();
@@ -85,13 +88,16 @@ public class DiskCacheObservable extends CacheObservable {
         Bitmap bitmap = null;
         FileDescriptor fileDescriptor = null;
         FileInputStream fileInputStream = null;
-       try {
+        try {
+            //生成图片URL对应的key
             final String key = DiskCacheUtils.getMD5String(url);
+            //查找key对应的缓存
             DiskLruCache.Snapshot snapshot = mDiskLruCache.get(key);
             if (snapshot != null) {
                 fileInputStream = (FileInputStream) snapshot.getInputStream(0);
                 fileDescriptor = fileInputStream.getFD();
             }
+            //将缓存数据解析成Bitmap对象
             if (fileDescriptor != null) {
                 bitmap = BitmapFactory.decodeStream(fileInputStream);
             }
@@ -116,10 +122,14 @@ public class DiskCacheObservable extends CacheObservable {
      */
     private void putDataToDiskLruCache(ImageBean imageBean) {
         try {
+            //获取将要缓存的图片的对应唯一key值
             String key = DiskCacheUtils.getMD5String(imageBean.getUrl());
+            //获取DiskLrcCache的Editor
             DiskLruCache.Editor editor = mDiskLruCache.edit(key);
             if (editor != null) {
+                //从Editor中获取OutputStream
                 OutputStream outputStream = editor.newOutputStream(0);
+                //下载网络图片并且保存至DiskLruCache图片缓存中
                 boolean isSuccess = downloadUrlToStream(imageBean.getUrl(), outputStream);
                 if (isSuccess) {
                     editor.commit();

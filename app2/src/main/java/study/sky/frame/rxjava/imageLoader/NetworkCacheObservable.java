@@ -16,12 +16,12 @@ import java.net.URLConnection;
  */
 
 public class NetworkCacheObservable extends CacheObservable {
+
     @Override
     public ImageBean getDataFromCache(String url) {
-
+        Log.e("getDataFromCache", "getDataFromNetworkCache");
         Bitmap bitmap = downloadImage(url);
         if (bitmap != null) {
-            Log.e("url==",url);
             return new ImageBean(bitmap, url);
         }
         return null;

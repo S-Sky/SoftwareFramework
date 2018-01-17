@@ -1,11 +1,8 @@
 package study.sky.frame.rxjava.imageLoader;
 
-import android.util.Log;
-
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
@@ -30,7 +27,6 @@ public abstract class CacheObservable {
                 //如果没有取消订阅
                 if (!e.isDisposed()) {
                     ImageBean imageBean = getDataFromCache(url);
-                    Log.e("url==",imageBean.getUrl());
                     e.onNext(imageBean);
                     e.onComplete();
                 }

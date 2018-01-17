@@ -11,6 +11,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 import study.sky.frame.R;
+import study.sky.frame.rxjava.imageLoader.CleanMessageUtil;
 import study.sky.frame.rxjava.imageLoader.RxImageLoader;
 
 public class CustomImageCacheActivity extends Activity {
@@ -21,6 +22,8 @@ public class CustomImageCacheActivity extends Activity {
     ImageView imageView;
     @BindView(R.id.tv_title)
     TextView tvTitle;
+    @BindView(R.id.text_show)
+    TextView tvShow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,15 +32,35 @@ public class CustomImageCacheActivity extends Activity {
         unbinder = ButterKnife.bind(this);
 
         tvTitle.setText("自定义图片缓存框架");
+        showCacheSize();
 
     }
 
-    @OnClick(R.id.btn_show)
+    private void showCacheSize() {
+        try {
+            tvShow.setText(CleanMessageUtil.getTotalCacheSize(getApplicationContext()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @OnClick({R.id.btn_show, R.id.btn_clear})
     public void onClick(View view) {
-        imageView.setImageResource(R.mipmap.ic_launcher);
-        RxImageLoader.with(this)
-                .load("http://dynamic-image.yesky.com/740x-/uploadImages/2014/289/01/IGS09651F94M.jpg")
-                .into(imageView);
+
+        switch (view.getId()) {
+            case R.id.btn_show:
+                imageView.setImageResource(R.mipmap.ic_launcher);
+                RxImageLoader.with(this)
+                        .load("http://dynamic-image.yesky.com/740x-/uploadImages/2014/289/01/IGS09651F94M.jpg")
+                        .into(imageView);
+                showCacheSize();
+                break;
+            case R.id.btn_clear:
+                CleanMessageUtil.clearAllCache(getApplicationContext());
+                imageView.setImageResource(R.mipmap.ic_launcher);
+                showCacheSize();
+                break;
+        }
     }
 
     @Override

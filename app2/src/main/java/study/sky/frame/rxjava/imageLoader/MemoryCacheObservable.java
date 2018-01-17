@@ -11,6 +11,9 @@ import android.util.LruCache;
 
 public class MemoryCacheObservable extends CacheObservable {
 
+    /**
+     * APP分配的最大内存(默认单位是字节byte),这里转换为KB
+     */
     private int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
     private int cacheSize = maxMemory / 4;
     private LruCache<String, Bitmap> mLruCache = new LruCache<String, Bitmap>(cacheSize) {

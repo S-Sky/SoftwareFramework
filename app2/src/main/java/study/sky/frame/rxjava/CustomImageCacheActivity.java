@@ -53,12 +53,10 @@ public class CustomImageCacheActivity extends Activity {
                 RxImageLoader.with(this)
                         .load("http://dynamic-image.yesky.com/740x-/uploadImages/2014/289/01/IGS09651F94M.jpg")
                         .into(imageView);
-                showCacheSize();
                 break;
             case R.id.btn_clear:
                 CleanMessageUtil.clearAllCache(getApplicationContext());
                 imageView.setImageResource(R.mipmap.ic_launcher);
-                showCacheSize();
                 break;
         }
     }
